@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import util from 'util.js'
 import { connect } from 'react-redux';
-import { fetchProducts, addToCart } from 'actions/productActions';
+import { fetchProducts } from 'actions/productActions';
+import { addToCart } from 'actions/cartActions';
 
 class Products extends Component {
 
@@ -36,7 +37,7 @@ class Products extends Component {
 const mapStateToProps = state => {
     return {
         products: (state.products.filteredItems && state.products.filteredItems.length > 0) ? state.products.filteredItems : state.products.data,
-        cartItems: state.products.cartItems
+        cartItems: state.carts.cartItems
     }
 };
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import util from 'util.js'
 import { connect } from 'react-redux';
-import { removeFromCart, checkingOut } from 'actions/productActions';
+import { removeFromCart, checkingOut } from 'actions/cartActions';
 
 class Basket extends Component {
     render() {
@@ -32,7 +32,7 @@ class Basket extends Component {
 }
 
 const mapStateToProps = state => ({
-    cartItems: state.products.cartItems
+    cartItems: state.carts.cartItems
 });
 
 export default connect(mapStateToProps, { removeFromCart, checkingOut })(Basket);
